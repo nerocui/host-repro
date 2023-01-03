@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="my-title">Hello</h1>
+    <p id="message-1"></p>
+    <br/>
+    <p id="message-2"></p>
+    <br/>
+    <iframe id="my-iframe" src="/iframe.html"></iframe>
+    <script>
+        var childIframe = document.getElementById('my-iframe');
+        var childHost = childIframe.contentWindow;
+        document.getElementById('message-1').innerText = `instanceof Element: ${document.getElementById('my-title') instanceof Element}`;
+        document.getElementById('message-2').innerText = `instanceof iframe's Element: ${document.getElementById('my-title') instanceof childHost.Element}`;
+    </script>
+</body>
+</html>
